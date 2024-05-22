@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#  Scrapper
 from google_play_scraper import search
 import json
 import re
@@ -57,7 +57,7 @@ for item in result:
 
     extracted_results.append(nresult)
 
-csv_file_name = "arcade_games.csv"
+csv_file_name = "games.csv"
 
 
 fieldnames = ['Title', 'Genre', 'Free','Rating', 'Icon', 'Description', 'Installs']
@@ -78,11 +78,12 @@ with open(csv_file_name, mode='a', newline='', encoding='utf-8') as csv_file:
         writer.writerow(data)
 
 print(f"Data successfully appended to {csv_file_name}")
-
+#--------------------------------------
+#Data Cleaning
 import pandas as pd
 
 
-csv_file_name = "arcade_games.csv"
+csv_file_name = "games.csv"
 
 
 df = pd.read_csv(csv_file_name)
